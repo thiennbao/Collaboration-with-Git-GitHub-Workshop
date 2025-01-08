@@ -1,12 +1,13 @@
 {
-  "dependencies": {
-    "express": "^4.21.2"
-  },
   "name": "example-server",
   "version": "1.0.0",
   "description": "A simple server in Express.js",
   "type": "module",
   "main": "index.js",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
   "devDependencies": {
     "nodemon": "^3.1.9"
   },
