@@ -32,9 +32,9 @@ app.get("/what", (req, res) => {
 
 app.get("/meo", (req, res) => {
     res.send(`
-        <h1>Khang page</h1>
+        <h1>Meo page</h1>
         
-        <p>This is a simple Khang page</p>
+        <p>This is a simple meo page</p>
         <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
         `)
 })
