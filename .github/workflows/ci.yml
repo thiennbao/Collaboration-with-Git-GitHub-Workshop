@@ -1,3 +1,5 @@
+name: Redeploy on push to main
+
 on:
   pull_request:
   push:
