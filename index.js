@@ -20,6 +20,13 @@ app.get("/about", (req, res) => {
         <p>This is a simple about page</p>
         <br>
         <h3>Made purely for learning purposes</h3>
+        <p>For collaboration and more</p>
+        `);
+})
+
+app.get("/what", (req, res) => {
+    res.send(`
+        <h1>Yes</h1>
         `);
 })
 
