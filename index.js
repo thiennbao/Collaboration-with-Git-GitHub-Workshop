@@ -30,6 +30,15 @@ app.get("/what", (req, res) => {
         `);
 })
 
+app.get("/meo", (req, res) => {
+    res.send(`
+        <h1>Khang page</h1>
+        
+        <p>This is a simple Khang page</p>
+        <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
+        `)
+})
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 })
