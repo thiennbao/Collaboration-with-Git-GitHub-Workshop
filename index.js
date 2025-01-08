@@ -1,16 +1,9 @@
 import express from 'express'
 import 'dotenv/config'
-import favicon from 'serve-favicon'
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path'
 
 const port = process.env.PORT || 3000;
-const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
-const faviconPath = join(__dirname, 'images', 'favicon.ico')
-console.log("File: ", faviconPath)
-app.use(favicon(faviconPath))
 
 app.get('/', (req, res) => {
     res.json({
@@ -39,9 +32,9 @@ app.get("/what", (req, res) => {
 
 app.get("/meo", (req, res) => {
     res.send(`
-        <h1>Khang page</h1>
+        <h1>Meo page</h1>
         
-        <p>This is a simple Khang page</p>
+        <p>This is a simple meo page</p>
         <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
         `)
 })
