@@ -1,5 +1,5 @@
 import express from "express";
-import { dirname } from "path";
+import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import expressHbs from "express-handlebars";
 import "dotenv/config";
@@ -26,6 +26,7 @@ app.engine(
   })
 );
 app.set("view engine", "hbs");
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
   res.render("index", {});
@@ -58,6 +59,10 @@ app.get("/meo", (req, res) => {
     <p>This is a simple meo page</p>
     <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
   `);
+});
+
+app.get("/aurora", (_req, res) => {
+  res.render("aurora.hbs");
 });
 
 app.listen(port, () => {
