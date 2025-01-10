@@ -1,11 +1,36 @@
 import express from 'express'
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import expressHbs from 'express-handlebars';
 import 'dotenv/config'
 
 const port = process.env.PORT || 3000;
 
 const app = express();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Set up template engine
+app.engine('hbs', expressHbs.engine(
+    {
+        layoutsDir: 'views/layouts',
+        partialsDir: 'views/partials',
+        extname: 'hbs',
+        defaultLayout: 'main-layout',
+        runtimeOptions: {
+            allowProtoPropertiesByDefault: true,
+            // allowProtoMethodsByDefault: true
+        }
+    }
+));
+app.set('view engine', 'hbs');
+
 app.get('/', (req, res) => {
+    res.render('index', {});
+});
+
+app.get('/test', (req, res) => {
     res.json({
         from: "Express server",
         status: "✅Still online",
