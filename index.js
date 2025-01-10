@@ -43,31 +43,21 @@ app.get("/test", (req, res) => {
 
 app.get("/about", (req, res) => {
   res.send(`
-        <h1>About page</h1>
-        <p>This is a simple about page</p>
-        <br>
-        <h3>Made purely for learning purposes</h3>
-        <p>For collaboration and more</p>
-        `);
-});
-
-app.get("/what", (req, res) => {
-  res.send(`
-        <h1>Yes</h1>
-        `);
+    <h1>About page</h1>
+    <p>This is a simple about page</p>
+    <br>
+    <h3>Made purely for learning purposes</h3>
+    <p>For collaboration and more</p>
+  `);
 });
 
 app.get("/meo", (req, res) => {
   res.send(`
-        <h1>Meo page</h1>
-        
-        <p>This is a simple meo page</p>
-        <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
-        `);
-});
-
-app.get("/hehe", (req, res) => {
-  res.json({ message: "he".repeat(1000000) });
+    <h1>Meo page</h1>
+    
+    <p>This is a simple meo page</p>
+    <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
+  `);
 });
 
 app.listen(port, () => {
