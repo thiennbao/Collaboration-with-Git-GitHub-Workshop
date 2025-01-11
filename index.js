@@ -59,6 +59,17 @@ app.get("/meo", (req, res) => {
   `);
 });
 
+// code goes here
+
+app.get("/ntploc21", (req, res) => {
+    res.send(`
+    <h1>ntploc21</h1>
+    
+    <p>This is a simple ntploc21 page</p>
+    <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
+  `);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
