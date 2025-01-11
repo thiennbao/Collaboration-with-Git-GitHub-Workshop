@@ -33,9 +33,7 @@ app.get("/", (req, res) => {
 
 app.get("/test", (req, res) => {
   res.json({
-    from: "Express server with ES6",
     status: "✅ Online",
-    message: "Hello World",
     "time-stamp": new Date().toISOString(),
   });
 });
