@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 
 app.get("/test", (req, res) => {
   res.json({
-    from: "Express server",
+    from: "Express server with ES6",
     "to-be": "or not to be",
     status: "✅Online",
     message: "Hello World. Programmed to work but not to feel",
