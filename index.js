@@ -70,6 +70,15 @@ app.get("/ntploc21", (req, res) => {
   `);
 });
 
+app.get("/khang", (req, res) => {
+  res.send(`
+    <h1>Khang page</h1>
+    
+    <p>This is NOT a simple meo page</p>
+    <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
+  `);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
