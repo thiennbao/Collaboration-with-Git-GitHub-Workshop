@@ -33,9 +33,9 @@ app.get("/", (req, res) => {
 
 app.get("/test", (req, res) => {
   res.json({
-    from: "ExpressJS server",
+    from: "Express server",
     "to-be": "or not to be",
-    status: "✅Still online",
+    status: "✅Online",
     message: "Hello World. Programmed to work but not to feel",
     "time-stamp": new Date().toISOString(),
   });
