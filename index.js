@@ -1,6 +1,7 @@
 import express from "express";
-import { dirname } from "path";
+import { dirname, join } from "path";
 import { fileURLToPath } from "url";
+import fs from "fs";
 import expressHbs from "express-handlebars";
 import "dotenv/config";
 
@@ -32,13 +33,37 @@ app.get("/", (req, res) => {
   res.render("index", {});
 });
 
+const directoryPath = join(__dirname, 'json'); // Path to /json directory
+
+// Endpoint to list all files in the directory
+app.get('/json', (req, res) => {
+    fs.readdir(directoryPath, (err, files) => {
+        if (err) {
+            return res.status(500).send('Unable to scan directory: ' + err);
+        }
+        res.json(files); // Return the list of files as JSON
+    });
+});
+
+// Dynamic endpoint for each file in the directory
+app.get('/json/:filename', (req, res) => {
+    const filename = req.params.filename;
+    const filePath = join(directoryPath, filename + ".json");
+
+    fs.readFile(filePath, 'utf-8', (err, data) => {
+        if (err) {
+            return res.status(404).send('File not found');
+        }
+        res.json(JSON.parse(data)); // Send the file content as response
+    });
+});
+
 app.get("/test", (req, res) => {
   res.json({
     status: "✅ Online",
     from: host,
-    message: "Hello World. GDSC is a club for developers",
-    "time-stamp": new Date().toISOString(),
-    message: "Hello World. GDSC is a club for developers",
+    message: "Hello World. GDGoC HCMUS is a developer student club",
+    "time-stamp": new Date().toISOString()
   });
 });
 
@@ -63,32 +88,6 @@ app.get("/meo", (req, res) => {
 
 // code goes here
 
-app.get("/ntploc21", (req, res) => {
-    res.send(`
-    <h1>ntploc21</h1>
-    
-    <p>This is a simple ntploc21 page</p>
-    <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
-  `);
-});
-
-app.get("/khang", (req, res) => {
-  res.send(`
-    <h1>Khang page</h1>
-    
-    <p>This is NOT a simple meo page</p>
-    <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
-  `);
-});
-
-app.get("/some", (req, res) => {
-  res.send(`
-    <h1>Some page</h1>
-    
-    <p>This is a simple some page</p>
-    <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
-  `);
-});
 
 app.get("/thing", (req, res) => {
   res.send(`
