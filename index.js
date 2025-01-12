@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
   res.render("index", {});
 });
 
-const directoryPath = join(__dirname, 'json'); // Path to your files directory
+const directoryPath = join(__dirname, 'json'); // Path to /json directory
 
 // Endpoint to list all files in the directory
 app.get('/json', (req, res) => {
@@ -62,7 +62,7 @@ app.get("/test", (req, res) => {
   res.json({
     status: "✅ Online",
     from: host,
-    message: "Hello World. GDSC is a club for developers",
+    message: "Hello World. GDGoC HCMUS is a developer student club",
     "time-stamp": new Date().toISOString()
   });
 });
@@ -88,32 +88,6 @@ app.get("/meo", (req, res) => {
 
 // code goes here
 
-app.get("/ntploc21", (req, res) => {
-    res.send(`
-    <h1>ntploc21</h1>
-    
-    <p>This is a simple ntploc21 page</p>
-    <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
-  `);
-});
-
-app.get("/khang", (req, res) => {
-  res.send(`
-    <h1>Khang page</h1>
-    
-    <p>This is NOT a simple meo page</p>
-    <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
-  `);
-});
-
-app.get("/some", (req, res) => {
-  res.send(`
-    <h1>Some page</h1>
-    
-    <p>This is a simple some page</p>
-    <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
-  `);
-});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
