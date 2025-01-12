@@ -37,6 +37,7 @@ app.get("/test", (req, res) => {
     status: "✅ Online",
     message: "Hello World. GDSC is a club for developers",
     "time-stamp": new Date().toISOString(),
+    message: "Hello World. GDSC is a club for developers",
   });
 });
 
