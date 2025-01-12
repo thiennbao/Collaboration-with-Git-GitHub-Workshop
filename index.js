@@ -89,6 +89,15 @@ app.get("/meo", (req, res) => {
 // code goes here
 
 
+app.get("/thing", (req, res) => {
+  res.send(`
+    <h1>Thing page</h1>
+    
+    <p>A simple page change</p>
+    <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
+  `);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
