@@ -5,6 +5,7 @@ import expressHbs from "express-handlebars";
 import "dotenv/config";
 
 const port = process.env.PORT || 3000;
+const host = process.env.HOST || "💻 localhost"
 
 const app = express();
 
@@ -33,8 +34,8 @@ app.get("/", (req, res) => {
 
 app.get("/test", (req, res) => {
   res.json({
-    from: "Express server with ES6",
     status: "✅ Online",
+    from: host,
     message: "Hello World. GDSC is a club for developers",
     "time-stamp": new Date().toISOString(),
     message: "Hello World. GDSC is a club for developers",
