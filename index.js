@@ -33,7 +33,9 @@ app.get("/", (req, res) => {
 
 app.get("/test", (req, res) => {
   res.json({
+    from: "Express server with ES6",
     status: "✅ Online",
+    message: "Hello World. GDSC is a club for developers",
     "time-stamp": new Date().toISOString(),
   });
 });
@@ -53,6 +55,17 @@ app.get("/meo", (req, res) => {
     <h1>Meo page</h1>
     
     <p>This is a simple meo page</p>
+    <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
+  `);
+});
+
+// code goes here
+
+app.get("/ntploc21", (req, res) => {
+    res.send(`
+    <h1>ntploc21</h1>
+    
+    <p>This is a simple ntploc21 page</p>
     <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
   `);
 });
