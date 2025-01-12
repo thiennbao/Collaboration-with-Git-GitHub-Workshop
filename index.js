@@ -92,9 +92,9 @@ app.get("/some", (req, res) => {
 
 app.get("/thing", (req, res) => {
   res.send(`
-    <h1>Khang page</h1>
+    <h1>Thing page</h1>
     
-    <p>This is NOT a simple meo page</p>
+    <p>A simple page change</p>
     <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
   `);
 });
