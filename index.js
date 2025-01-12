@@ -86,10 +86,7 @@ app.get("/meo", (req, res) => {
   `);
 });
 
-// code goes here
-
-
-app.get("/thing", (req, res) => {
+app.get("/egorioihegrgwhoei", (req, res) => {
   res.send(`
     <h1>Thing page</h1>
     
