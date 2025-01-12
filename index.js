@@ -61,7 +61,7 @@ app.get('/json/:filename', (req, res) => {
 
 app.get("/test", (req, res) => {
   res.json({
-    status: "✅ Online",
+    status: "✅ Offline",
     from: host,
     message: "Hello World. GDGoC HCMUS is a developer student club",
     "time-stamp": new Date().toISOString()
