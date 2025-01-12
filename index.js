@@ -1,6 +1,7 @@
 import express from "express";
-import { dirname } from "path";
+import { dirname, join } from "path";
 import { fileURLToPath } from "url";
+import fs from "fs";
 import expressHbs from "express-handlebars";
 import "dotenv/config";
 
@@ -30,6 +31,31 @@ app.set("view engine", "hbs");
 
 app.get("/", (req, res) => {
   res.render("index", {});
+});
+
+const directoryPath = join(__dirname, 'json'); // Path to your files directory
+
+// Endpoint to list all files in the directory
+app.get('/json', (req, res) => {
+    fs.readdir(directoryPath, (err, files) => {
+        if (err) {
+            return res.status(500).send('Unable to scan directory: ' + err);
+        }
+        res.json(files); // Return the list of files as JSON
+    });
+});
+
+// Dynamic endpoint for each file in the directory
+app.get('/json/:filename', (req, res) => {
+    const filename = req.params.filename;
+    const filePath = join(directoryPath, filename + ".json");
+
+    fs.readFile(filePath, 'utf-8', (err, data) => {
+        if (err) {
+            return res.status(404).send('File not found');
+        }
+        res.json(JSON.parse(data)); // Send the file content as response
+    });
 });
 
 app.get("/test", (req, res) => {
