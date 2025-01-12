@@ -87,6 +87,15 @@ app.get("/meo", (req, res) => {
 });
 
 // code goes here
+app.get("/thing-ntploc21", (req, res) => {
+    res.send(`
+    <h1>Thing page</h1>
+    
+    <p>A simple Loc page change</p>
+    <img src='https://avatars.githubusercontent.com/u/84757707?v=4'/>
+  `);
+});
+
 app.get("/aaa", (req, res) => {
   res.send(`
     <h1>About page</h1>
