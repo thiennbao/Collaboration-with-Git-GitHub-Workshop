@@ -87,7 +87,15 @@ app.get("/meo", (req, res) => {
 });
 
 // code goes here
-
+app.get("/aaa", (req, res) => {
+  res.send(`
+    <h1>About page</h1>
+    <p>This is a simple about page</p>
+    <br>
+    <h3>Made purely for learning purposes</h3>
+    <p>For collaboration and more</p>
+  `);
+});
 
 app.get("/thing", (req, res) => {
   res.send(`
